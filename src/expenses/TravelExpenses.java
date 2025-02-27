@@ -42,6 +42,7 @@ public class TravelExpenses {
             }
         }
         else {
+            System.out.print("Please enter a yearly spending: ");
             this.yearlyExpense = scnr.nextDouble();
         }
 
