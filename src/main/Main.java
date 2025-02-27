@@ -15,6 +15,8 @@ public class Main {
         else {
             travelExpenses = new TravelExpenses(false);
         }
+        travelExpenses.setExpenses();
         System.out.println(travelExpenses.getExpenses());
+
     }
 }

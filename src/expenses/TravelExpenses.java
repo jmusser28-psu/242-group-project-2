@@ -36,6 +36,7 @@ public class TravelExpenses {
             monthlyExpense[10] =  scnr.nextDouble();
             System.out.print("Please enter spending for December: ");
             monthlyExpense[11] =  scnr.nextDouble();
+            System.out.println();
 
             for (double elements : monthlyExpense) {
                 yearlyExpense += elements;
@@ -50,34 +51,41 @@ public class TravelExpenses {
 
     public double getExpenses() {
         if (isMonthly) {
+            yearlyExpense = 0;
             for (double elements : monthlyExpense) {
                 yearlyExpense += elements;
             }
         }
         return yearlyExpense;
     }
-    public void setExpenses(double expenses) {
+    public void setExpenses() {
         if (isMonthly) {
-            System.out.println("1.) January");
-            System.out.println("2.) February");
-            System.out.println("3.) March");
-            System.out.println("4.) April");
-            System.out.println("5.) May");
-            System.out.println("6.) June");
-            System.out.println("7.) July");
-            System.out.println("8.) August");
-            System.out.println("9.) September");
-            System.out.println("10.) October");
-            System.out.println("11.) November");
-            System.out.println("12.) December");
+            System.out.println("1.) January | 2.) February | 3.) March");
+            System.out.println("4.) April | 5.) May | 6.) June");
+            System.out.println("7.) July | 8.) August | 9.) September");
+            System.out.println("10.) October | 11.) November | 12.) December");
 
-            System.out.print("Please specify a month to modify (1-12): ");
-            byte userChoice = scnr.nextByte();
-            userChoice -= 1;
-            monthlyExpense[userChoice] = scnr.nextDouble();
 
-            for (double elements : monthlyExpense) {
-                yearlyExpense += elements;
+            boolean done = false;
+
+            while (!done) {
+                System.out.print("Please specify a month to modify (1-12): ");
+                byte userChoice = scnr.nextByte();
+                userChoice -= 1;
+                System.out.print("Please specify a new value: ");
+                monthlyExpense[userChoice] = scnr.nextDouble();
+
+                yearlyExpense = 0;
+                for (double elements : monthlyExpense) {
+                    yearlyExpense += elements;
+                }
+                scnr.nextLine();
+
+                System.out.print("Would you like to continue (Y/N): ");
+                char continueChoice = scnr.nextLine().charAt(0);
+                if (continueChoice == 'N' || continueChoice == 'n') {
+                    done = true;
+                }
             }
         }
         else {
