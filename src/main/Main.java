@@ -2,7 +2,7 @@ package main;
 
 import expenses.TravelExpenses;
 import util.ByteValidation;
-import util.StringValidation;
+import util.GetString;
 
 public class Main {
     public static void main(String[] args) {
@@ -15,7 +15,7 @@ public class Main {
         while (!(userChoice == -1)) {
             if (isFirstTime) {
                 System.out.print("Would you like to enter yearly or monthly data: ");
-                String choice = StringValidation.validate();
+                String choice = GetString.get();
                 if (choice.equalsIgnoreCase("Monthly")) {
                     isMonthly = true;
                 }

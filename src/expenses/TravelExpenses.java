@@ -1,9 +1,8 @@
 package expenses;
 
 import util.ByteValidation;
-import util.CharacterValidation;
+import util.GetCharacter;
 import util.DoubleValidation;
-import util.StringValidation;
 
 import java.util.Scanner;
 
@@ -109,7 +108,7 @@ public class TravelExpenses {
                 yearlyExpense = costCombined;
 
                 System.out.print("Would you like to continue (Y/N): ");
-                char continueChoice = CharacterValidation.validate();
+                char continueChoice = GetCharacter.get();
                 if (continueChoice == 'N' || continueChoice == 'n') {
                     done = true;
                 }
