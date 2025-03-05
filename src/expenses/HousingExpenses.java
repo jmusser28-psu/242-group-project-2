@@ -41,7 +41,7 @@ public class HousingExpenses {
             monthlyExpense[9] =  DoubleValidation.validate();
             System.out.print("Please enter travel spending for November: ");
             monthlyExpense[10] =  DoubleValidation.validate();
-            System.out.print("Please enter spending for December: ");
+            System.out.print("Please enter travel spending for December: ");
             monthlyExpense[11] =  DoubleValidation.validate();
             System.out.println();
 
