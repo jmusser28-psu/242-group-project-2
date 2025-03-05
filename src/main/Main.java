@@ -14,10 +14,11 @@ public class Main {
         FoodExpenses foodExpenses = null;
         TravelExpenses travelExpenses = null;
         EntertainmentExpenses entertainmentExpenses = null;
+        InsuranceExpenses insuranceExpenses = null;
 
         int userChoice = 0;
         boolean run = true;
-        while (!run) {
+        while (run) {
             if (isFirstTime) {
                 System.out.print("Would you like to enter yearly or monthly data? ");
                 String choice = GetString.get();
@@ -29,6 +30,7 @@ public class Main {
                 foodExpenses = new FoodExpenses(isMonthly);
                 travelExpenses = new TravelExpenses(isMonthly);
                 entertainmentExpenses = new EntertainmentExpenses(isMonthly);
+                insuranceExpenses = new InsuranceExpenses(isMonthly);
                 isFirstTime = false;
             }
             else {
@@ -56,6 +58,7 @@ public class Main {
                     System.out.println("3.) Food Expenses");
                     System.out.println("4.) Travel Expenses");
                     System.out.println("5.) Entertainment Expenses");
+                    System.out.println("6.) Insurance Premiums");
                     System.out.print("What would you like to do? ");
                     userChoice = ByteValidation.validate();
                     if (userChoice == 1) {
@@ -72,6 +75,9 @@ public class Main {
                     }
                     else if (userChoice == 5) {
                         entertainmentExpenses.setExpenses();
+                    }
+                    else if (userChoice == 6) {
+                        insuranceExpenses.setExpenses();
                     }
                     else {
                         System.out.printf("Invalid choice %d\n", userChoice);

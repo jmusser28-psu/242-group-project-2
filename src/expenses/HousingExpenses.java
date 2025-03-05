@@ -19,29 +19,29 @@ public class HousingExpenses {
 
         // Takes in monthly user input if the user decided to enter in monthly expenses individually
         if (isMonthly) {
-            System.out.print("Please enter housing spending for January: ");
+            System.out.print("Please enter housing expenses for January: ");
             monthlyExpense[0] = DoubleValidation.validate();
-            System.out.print("Please enter housing spending for February: ");
+            System.out.print("Please enter housing expenses for February: ");
             monthlyExpense[1] =  DoubleValidation.validate();
-            System.out.print("Please enter housing spending for March: ");
+            System.out.print("Please enter housing expenses for March: ");
             monthlyExpense[2] =  DoubleValidation.validate();
-            System.out.print("Please enter housing spending for April: ");
+            System.out.print("Please enter housing expenses for April: ");
             monthlyExpense[3] =  DoubleValidation.validate();
-            System.out.print("Please enter housing spending for May: ");
+            System.out.print("Please enter housing expenses for May: ");
             monthlyExpense[4] =  DoubleValidation.validate();
-            System.out.print("Please enter housing spending for June: ");
+            System.out.print("Please enter housing expenses for June: ");
             monthlyExpense[5] =  DoubleValidation.validate();
-            System.out.print("Please enter housing spending for July: ");
+            System.out.print("Please enter housing expenses for July: ");
             monthlyExpense[6] =  DoubleValidation.validate();
-            System.out.print("Please enter housing spending for August: ");
+            System.out.print("Please enter housing expenses for August: ");
             monthlyExpense[7] =  DoubleValidation.validate();
-            System.out.print("Please enter housing spending for September: ");
+            System.out.print("Please enter housing expenses for September: ");
             monthlyExpense[8] =  DoubleValidation.validate();
-            System.out.print("Please enter housing spending for October: ");
+            System.out.print("Please enter housing expenses for October: ");
             monthlyExpense[9] =  DoubleValidation.validate();
-            System.out.print("Please enter housing spending for November: ");
+            System.out.print("Please enter housing expenses for November: ");
             monthlyExpense[10] =  DoubleValidation.validate();
-            System.out.print("Please enter housing spending for December: ");
+            System.out.print("Please enter housing expenses for December: ");
             monthlyExpense[11] =  DoubleValidation.validate();
             System.out.println();
 
@@ -57,7 +57,7 @@ public class HousingExpenses {
 
         // Takes in user input if the user decided to enter in yearly expenses
         else {
-            System.out.print("Please enter a yearly spending: ");
+            System.out.print("Please enter yearly housing expense: ");
             this.yearlyExpense = DoubleValidation.validate();
         }
 
@@ -118,7 +118,7 @@ public class HousingExpenses {
 
         // Assigns yearlyExpense with user input
         else {
-            System.out.print("Please enter a yearly spending: ");
+            System.out.print("Please enter yearly housing expense: ");
             yearlyExpense = DoubleValidation.validate();
         }
 

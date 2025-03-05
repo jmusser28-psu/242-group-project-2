@@ -19,29 +19,29 @@ public class InsuranceExpenses {
 
         // Takes in monthly user input if the user decided to enter in monthly expenses individually
         if (isMonthly) {
-            System.out.print("Please enter insurance spending for January: ");
+            System.out.print("Please enter insurance premiums for January: ");
             monthlyExpense[0] = DoubleValidation.validate();
-            System.out.print("Please enter insurance spending for February: ");
+            System.out.print("Please enter insurance premiums for February: ");
             monthlyExpense[1] =  DoubleValidation.validate();
-            System.out.print("Please enter insurance spending for March: ");
+            System.out.print("Please enter insurance premiums for March: ");
             monthlyExpense[2] =  DoubleValidation.validate();
-            System.out.print("Please enter insurance spending for April: ");
+            System.out.print("Please enter insurance premiums for April: ");
             monthlyExpense[3] =  DoubleValidation.validate();
-            System.out.print("Please enter insurance spending for May: ");
+            System.out.print("Please enter insurance premiums for May: ");
             monthlyExpense[4] =  DoubleValidation.validate();
-            System.out.print("Please enter insurance spending for June: ");
+            System.out.print("Please enter insurance premiums for June: ");
             monthlyExpense[5] =  DoubleValidation.validate();
-            System.out.print("Please enter insurance spending for July: ");
+            System.out.print("Please enter insurance premiums for July: ");
             monthlyExpense[6] =  DoubleValidation.validate();
-            System.out.print("Please enter insurance spending for August: ");
+            System.out.print("Please enter insurance premiums for August: ");
             monthlyExpense[7] =  DoubleValidation.validate();
-            System.out.print("Please enter insurance spending for September: ");
+            System.out.print("Please enter insurance premiums for September: ");
             monthlyExpense[8] =  DoubleValidation.validate();
-            System.out.print("Please enter insurance spending for October: ");
+            System.out.print("Please enter insurance premiums for October: ");
             monthlyExpense[9] =  DoubleValidation.validate();
-            System.out.print("Please enter insurance spending for November: ");
+            System.out.print("Please enter insurance premiums for November: ");
             monthlyExpense[10] =  DoubleValidation.validate();
-            System.out.print("Please enter insurance spending for December: ");
+            System.out.print("Please enter insurance premiums for December: ");
             monthlyExpense[11] =  DoubleValidation.validate();
             System.out.println();
 
@@ -57,7 +57,7 @@ public class InsuranceExpenses {
 
         // Takes in user input if the user decided to enter in yearly expenses
         else {
-            System.out.print("Please enter a yearly spending: ");
+            System.out.print("Please enter a yearly insurance premium: ");
             this.yearlyExpense = DoubleValidation.validate();
         }
 
@@ -118,7 +118,7 @@ public class InsuranceExpenses {
 
         // Assigns yearlyExpense with user input
         else {
-            System.out.print("Please enter a yearly spending: ");
+            System.out.print("Please enter a yearly insurance premium: ");
             yearlyExpense = DoubleValidation.validate();
         }
 

@@ -19,29 +19,29 @@ public class TravelExpenses {
 
         // Takes in monthly user input if the user decided to enter in monthly expenses individually
         if (isMonthly) {
-            System.out.print("Please enter travel spending for January: ");
+            System.out.print("Please enter travel expenses for January: ");
             monthlyExpense[0] = DoubleValidation.validate();
-            System.out.print("Please enter travel spending for February: ");
+            System.out.print("Please enter travel expenses for February: ");
             monthlyExpense[1] =  DoubleValidation.validate();
-            System.out.print("Please enter travel spending for March: ");
+            System.out.print("Please enter travel expenses for March: ");
             monthlyExpense[2] =  DoubleValidation.validate();
-            System.out.print("Please enter travel spending for April: ");
+            System.out.print("Please enter travel expenses for April: ");
             monthlyExpense[3] =  DoubleValidation.validate();
-            System.out.print("Please enter travel spending for May: ");
+            System.out.print("Please enter travel expenses for May: ");
             monthlyExpense[4] =  DoubleValidation.validate();
-            System.out.print("Please enter travel spending for June: ");
+            System.out.print("Please enter travel expenses for June: ");
             monthlyExpense[5] =  DoubleValidation.validate();
-            System.out.print("Please enter travel spending for July: ");
+            System.out.print("Please enter travel expenses for July: ");
             monthlyExpense[6] =  DoubleValidation.validate();
-            System.out.print("Please enter travel spending for August: ");
+            System.out.print("Please enter travel expenses for August: ");
             monthlyExpense[7] =  DoubleValidation.validate();
-            System.out.print("Please enter travel spending for September: ");
+            System.out.print("Please enter travel expenses for September: ");
             monthlyExpense[8] =  DoubleValidation.validate();
-            System.out.print("Please enter travel spending for October: ");
+            System.out.print("Please enter travel expenses for October: ");
             monthlyExpense[9] =  DoubleValidation.validate();
-            System.out.print("Please enter travel spending for November: ");
+            System.out.print("Please enter travel expenses for November: ");
             monthlyExpense[10] =  DoubleValidation.validate();
-            System.out.print("Please enter travel spending for December: ");
+            System.out.print("Please enter travel expenses for December: ");
             monthlyExpense[11] =  DoubleValidation.validate();
             System.out.println();
 
@@ -57,7 +57,7 @@ public class TravelExpenses {
 
         // Takes in user input if the user decided to enter in yearly expenses
         else {
-            System.out.print("Please enter a yearly spending: ");
+            System.out.print("Please enter a yearly travel expense: ");
             this.yearlyExpense = DoubleValidation.validate();
         }
 
@@ -118,7 +118,7 @@ public class TravelExpenses {
 
         // Assigns yearlyExpense with user input
         else {
-            System.out.print("Please enter a yearly spending: ");
+            System.out.print("Please enter a yearly travel expense: ");
             yearlyExpense = DoubleValidation.validate();
         }
 

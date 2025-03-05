@@ -57,7 +57,7 @@ public class EntertainmentExpenses {
 
         // Takes in user input if the user decided to enter in yearly expenses
         else {
-            System.out.print("Please enter a yearly spending: ");
+            System.out.print("Please enter yearly entertainment spending: ");
             this.yearlyExpense = DoubleValidation.validate();
         }
 
@@ -118,7 +118,7 @@ public class EntertainmentExpenses {
 
         // Assigns yearlyExpense with user input
         else {
-            System.out.print("Please enter a yearly spending: ");
+            System.out.print("Please enter yearly entertainment spending: ");
             yearlyExpense = DoubleValidation.validate();
         }
 

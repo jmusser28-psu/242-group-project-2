@@ -19,29 +19,29 @@ public class UtilitiesExpenses {
 
         // Takes in monthly user input if the user decided to enter in monthly expenses individually
         if (isMonthly) {
-            System.out.print("Please enter utilities spending for January: ");
+            System.out.print("Please enter utilities expenses for January: ");
             monthlyExpense[0] = DoubleValidation.validate();
-            System.out.print("Please enter utilities spending for February: ");
+            System.out.print("Please enter utilities expenses for February: ");
             monthlyExpense[1] =  DoubleValidation.validate();
-            System.out.print("Please enter utilities spending for March: ");
+            System.out.print("Please enter utilities expenses for March: ");
             monthlyExpense[2] =  DoubleValidation.validate();
-            System.out.print("Please enter utilities spending for April: ");
+            System.out.print("Please enter utilities expenses for April: ");
             monthlyExpense[3] =  DoubleValidation.validate();
-            System.out.print("Please enter utilities spending for May: ");
+            System.out.print("Please enter utilities expenses for May: ");
             monthlyExpense[4] =  DoubleValidation.validate();
-            System.out.print("Please enter utilities spending for June: ");
+            System.out.print("Please enter utilities expenses for June: ");
             monthlyExpense[5] =  DoubleValidation.validate();
-            System.out.print("Please enter utilities spending for July: ");
+            System.out.print("Please enter utilities expenses for July: ");
             monthlyExpense[6] =  DoubleValidation.validate();
-            System.out.print("Please enter utilities spending for August: ");
+            System.out.print("Please enter utilities expenses for August: ");
             monthlyExpense[7] =  DoubleValidation.validate();
-            System.out.print("Please enter utilities spending for September: ");
+            System.out.print("Please enter utilities expenses for September: ");
             monthlyExpense[8] =  DoubleValidation.validate();
-            System.out.print("Please enter utilities spending for October: ");
+            System.out.print("Please enter utilities expenses for October: ");
             monthlyExpense[9] =  DoubleValidation.validate();
-            System.out.print("Please enter utilities spending for November: ");
+            System.out.print("Please enter utilities expenses for November: ");
             monthlyExpense[10] =  DoubleValidation.validate();
-            System.out.print("Please enter utilities spending for December: ");
+            System.out.print("Please enter utilities expenses for December: ");
             monthlyExpense[11] =  DoubleValidation.validate();
             System.out.println();
 
@@ -57,7 +57,7 @@ public class UtilitiesExpenses {
 
         // Takes in user input if the user decided to enter in yearly expenses
         else {
-            System.out.print("Please enter a yearly spending: ");
+            System.out.print("Please enter a yearly utility expense: ");
             this.yearlyExpense = DoubleValidation.validate();
         }
 
@@ -118,7 +118,7 @@ public class UtilitiesExpenses {
 
         // Assigns yearlyExpense with user input
         else {
-            System.out.print("Please enter a yearly spending: ");
+            System.out.print("Please enter a yearly utility expense: ");
             yearlyExpense = DoubleValidation.validate();
         }
 
