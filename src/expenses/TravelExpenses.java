@@ -1,5 +1,7 @@
 package expenses;
 
+import util.doubleValidation;
+
 import java.util.Scanner;
 
 public class TravelExpenses {
@@ -7,7 +9,7 @@ public class TravelExpenses {
     private double[] monthlyExpense = new double[12];
     private boolean isMonthly;
 
-    private Scanner scnr = new Scanner(System.in);
+    private static Scanner scnr = new Scanner(System.in);
 
     public TravelExpenses(boolean isMonthly) {
         // Determines if the user is entering monthly or yearly input
@@ -16,29 +18,29 @@ public class TravelExpenses {
         // Takes in monthly user input if the user decided to enter in monthly expenses individually
         if (isMonthly) {
             System.out.print("Please enter spending for January: ");
-            monthlyExpense[0] =  scnr.nextDouble();
+            monthlyExpense[0] = doubleValidation.validateDouble();
             System.out.print("Please enter spending for February: ");
-            monthlyExpense[1] =  scnr.nextDouble();
+            monthlyExpense[1] =  doubleValidation.validateDouble();
             System.out.print("Please enter spending for March: ");
-            monthlyExpense[2] =  scnr.nextDouble();
+            monthlyExpense[2] =  doubleValidation.validateDouble();
             System.out.print("Please enter spending for April: ");
-            monthlyExpense[3] =  scnr.nextDouble();
+            monthlyExpense[3] =  doubleValidation.validateDouble();
             System.out.print("Please enter spending for May: ");
-            monthlyExpense[4] =  scnr.nextDouble();
+            monthlyExpense[4] =  doubleValidation.validateDouble();
             System.out.print("Please enter spending for June: ");
-            monthlyExpense[5] =  scnr.nextDouble();
+            monthlyExpense[5] =  doubleValidation.validateDouble();
             System.out.print("Please enter spending for July: ");
-            monthlyExpense[6] =  scnr.nextDouble();
+            monthlyExpense[6] =  doubleValidation.validateDouble();
             System.out.print("Please enter spending for August: ");
-            monthlyExpense[7] =  scnr.nextDouble();
+            monthlyExpense[7] =  doubleValidation.validateDouble();
             System.out.print("Please enter spending for September: ");
-            monthlyExpense[8] =  scnr.nextDouble();
+            monthlyExpense[8] =  doubleValidation.validateDouble();
             System.out.print("Please enter spending for October: ");
-            monthlyExpense[9] =  scnr.nextDouble();
+            monthlyExpense[9] =  doubleValidation.validateDouble();
             System.out.print("Please enter spending for November: ");
-            monthlyExpense[10] =  scnr.nextDouble();
+            monthlyExpense[10] =  doubleValidation.validateDouble();
             System.out.print("Please enter spending for December: ");
-            monthlyExpense[11] =  scnr.nextDouble();
+            monthlyExpense[11] =  doubleValidation.validateDouble();
             System.out.println();
 
             // Sets a temporary variable to determine the monthly expenses
