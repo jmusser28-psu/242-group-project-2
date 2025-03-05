@@ -1,21 +1,21 @@
 package util;
 
 import java.util.Scanner;
-public class doubleValidation {
+public class ByteValidation {
 
     private static Scanner scnr = new Scanner(System.in);
 
-    public static double validateDouble() {
-        double returnValue = 0;
+    public static byte validate() {
+        byte returnValue = 0;
         boolean valid = false;
         while (!valid) {
-            if (scnr.hasNextDouble()) {
-                returnValue = scnr.nextDouble();
+            if (scnr.hasNextByte()) {
+                returnValue = scnr.nextByte();
                 scnr.nextLine();
                 valid = true;
             }
             else {
-                System.out.print("Error, Please Enter a Valid Numerical Value: ");
+                System.out.print("Error, Please Enter a Valid Value: ");
                 scnr.nextLine();
             }
         }

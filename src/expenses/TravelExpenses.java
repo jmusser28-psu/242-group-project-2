@@ -1,6 +1,9 @@
 package expenses;
 
-import util.doubleValidation;
+import util.ByteValidation;
+import util.CharacterValidation;
+import util.DoubleValidation;
+import util.StringValidation;
 
 import java.util.Scanner;
 
@@ -18,29 +21,29 @@ public class TravelExpenses {
         // Takes in monthly user input if the user decided to enter in monthly expenses individually
         if (isMonthly) {
             System.out.print("Please enter spending for January: ");
-            monthlyExpense[0] = doubleValidation.validateDouble();
+            monthlyExpense[0] = DoubleValidation.validate();
             System.out.print("Please enter spending for February: ");
-            monthlyExpense[1] =  doubleValidation.validateDouble();
+            monthlyExpense[1] =  DoubleValidation.validate();
             System.out.print("Please enter spending for March: ");
-            monthlyExpense[2] =  doubleValidation.validateDouble();
+            monthlyExpense[2] =  DoubleValidation.validate();
             System.out.print("Please enter spending for April: ");
-            monthlyExpense[3] =  doubleValidation.validateDouble();
+            monthlyExpense[3] =  DoubleValidation.validate();
             System.out.print("Please enter spending for May: ");
-            monthlyExpense[4] =  doubleValidation.validateDouble();
+            monthlyExpense[4] =  DoubleValidation.validate();
             System.out.print("Please enter spending for June: ");
-            monthlyExpense[5] =  doubleValidation.validateDouble();
+            monthlyExpense[5] =  DoubleValidation.validate();
             System.out.print("Please enter spending for July: ");
-            monthlyExpense[6] =  doubleValidation.validateDouble();
+            monthlyExpense[6] =  DoubleValidation.validate();
             System.out.print("Please enter spending for August: ");
-            monthlyExpense[7] =  doubleValidation.validateDouble();
+            monthlyExpense[7] =  DoubleValidation.validate();
             System.out.print("Please enter spending for September: ");
-            monthlyExpense[8] =  doubleValidation.validateDouble();
+            monthlyExpense[8] =  DoubleValidation.validate();
             System.out.print("Please enter spending for October: ");
-            monthlyExpense[9] =  doubleValidation.validateDouble();
+            monthlyExpense[9] =  DoubleValidation.validate();
             System.out.print("Please enter spending for November: ");
-            monthlyExpense[10] =  doubleValidation.validateDouble();
+            monthlyExpense[10] =  DoubleValidation.validate();
             System.out.print("Please enter spending for December: ");
-            monthlyExpense[11] =  doubleValidation.validateDouble();
+            monthlyExpense[11] =  DoubleValidation.validate();
             System.out.println();
 
             // Sets a temporary variable to determine the monthly expenses
@@ -56,7 +59,7 @@ public class TravelExpenses {
         // Takes in user input if the user decided to enter in yearly expenses
         else {
             System.out.print("Please enter a yearly spending: ");
-            this.yearlyExpense = scnr.nextDouble();
+            this.yearlyExpense = DoubleValidation.validate();
         }
 
     }
@@ -91,10 +94,10 @@ public class TravelExpenses {
             boolean done = false;
             while (!done) {
                 System.out.print("Please specify a month to modify (1-12): ");
-                byte userChoice = scnr.nextByte();
+                byte userChoice = ByteValidation.validate();
                 userChoice -= 1;
                 System.out.print("Please specify a new value: ");
-                monthlyExpense[userChoice] = scnr.nextDouble();
+                monthlyExpense[userChoice] = DoubleValidation.validate();
 
                 // Sets a temporary variable to determine the monthly expenses
                 // Loops through an enhanced for loop to find total monthly expenses during a year
@@ -104,11 +107,9 @@ public class TravelExpenses {
                     costCombined += elements;
                 }
                 yearlyExpense = costCombined;
-                // Reads the next line escape character, else the program crashes
-                scnr.nextLine();
 
                 System.out.print("Would you like to continue (Y/N): ");
-                char continueChoice = scnr.nextLine().charAt(0);
+                char continueChoice = CharacterValidation.validate();
                 if (continueChoice == 'N' || continueChoice == 'n') {
                     done = true;
                 }
@@ -117,7 +118,7 @@ public class TravelExpenses {
 
         // Assigns yearlyExpense with user input
         else {
-            yearlyExpense = scnr.nextDouble();
+            yearlyExpense = DoubleValidation.validate();
         }
 
     }

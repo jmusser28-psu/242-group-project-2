@@ -27,10 +27,18 @@ public class Main {
             else {
                 System.out.println("---Banking Program---");
                 System.out.println("1.) list expenses");
+                System.out.println("2.) set expenses");
                 System.out.print("What would you like to do? ");
                 userChoice = scnr.nextInt();
                 if (userChoice == 1) {
-                    System.out.println(travelExpenses.getExpenses());
+                    System.out.printf("Housing Expenses:\t%.2f\n", travelExpenses.getExpenses());
+                    System.out.printf("Utilities Expenses:\t%.2f\n", travelExpenses.getExpenses());
+                    System.out.printf("Food Expenses:\t%.2f\n", travelExpenses.getExpenses());
+                    System.out.printf("Travel Expenses:\t%.2f\n", travelExpenses.getExpenses());
+                    System.out.printf("Entertainment Expenses:\t%.2f\n", travelExpenses.getExpenses());
+                }
+                if (userChoice == 2) {
+                    travelExpenses.setExpenses();
                 }
 
             }
