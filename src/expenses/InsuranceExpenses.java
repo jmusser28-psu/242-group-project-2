@@ -4,14 +4,10 @@ import util.ByteValidation;
 import util.GetCharacter;
 import util.DoubleValidation;
 
-import java.util.Scanner;
-
 public class InsuranceExpenses {
     private double yearlyExpense;
     private double[] monthlyExpense = new double[12];
     private boolean isMonthly;
-
-    private static Scanner scnr = new Scanner(System.in);
 
     public InsuranceExpenses(boolean isMonthly) {
         // Determines if the user is entering monthly or yearly input

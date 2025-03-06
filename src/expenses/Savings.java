@@ -4,8 +4,6 @@ import util.ByteValidation;
 import util.GetCharacter;
 import util.DoubleValidation;
 
-import java.util.Scanner;
-
 public class Savings {
     private double yearlyExpense;
     private double[] monthlyExpense = new double[12];
@@ -13,15 +11,15 @@ public class Savings {
 
     private boolean saved;
 
-    private static Scanner scnr = new Scanner(System.in);
-
     public Savings(boolean isMonthly, boolean saved) {
         // Determines if the user is entering monthly or yearly input
         this.isMonthly = isMonthly;
         this.saved = saved;
 
-        // Takes in monthly user input if the user decided to enter in monthly expenses individually
+        // Will go through the process of taking user input if the user chose to save money
+        // If not, assigns the variables to 0 so that the program does not crash due to a null object
         if (saved) {
+            // Takes in monthly user input if the user decided to enter in monthly expenses individually
             if (isMonthly) {
                 System.out.print("Please enter savings for January: ");
                 monthlyExpense[0] = DoubleValidation.validate();
