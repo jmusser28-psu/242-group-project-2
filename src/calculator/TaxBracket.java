@@ -11,10 +11,14 @@ public class TaxBracket {
         this.income = income;
     }
 
-
+    public void setStatus(String status) {
+        this.status = status;
+    }
+    public void setIncome(double income) {
+        this.income = income;
+    }
 
     public double calculateTaxBracket() {
-        percent = 0;
         if(status.equalsIgnoreCase("Married")) {
             if (income > 0 && income < 14600) {
                 percent = 0;

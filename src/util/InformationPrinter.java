@@ -55,15 +55,12 @@ public class InformationPrinter {
         System.out.printf("\t- Entertainment Expenses: $%.2f\n", entertainmentExpenses.getExpenses());
         System.out.printf("\t- Insurance Premiums: $%.2f\n", insuranceExpenses.getExpenses());
         System.out.printf("Total Expenses: $%.2f\n", totalExpenses);
-        System.out.println();
         System.out.println("---Savings---");
         System.out.printf("\t- Retirement Contributions: $%.2f\n", retirement.getExpenses());
         System.out.printf("\t- Savings: $%.2f\n", savings.getExpenses());
         System.out.printf("Total Savings: $%.2f\n", totalSavings);
-        System.out.println();
+        System.out.println("---Total---");
         System.out.printf("Total Spent: $%.2f\n", total);
-
-
     }
     public static void modifyExpenses(HousingExpenses housingExpenses, UtilitiesExpenses utilitiesExpenses,
                                       FoodExpenses foodExpenses, TravelExpenses travelExpenses,

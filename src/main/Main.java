@@ -11,6 +11,20 @@ import util.InformationPrinter;
 
 public class Main {
 
+    public static double finalHoldings(HousingExpenses housingExpenses, UtilitiesExpenses utilitiesExpenses,
+                                       FoodExpenses foodExpenses, TravelExpenses travelExpenses,
+                                       EntertainmentExpenses entertainmentExpenses, InsuranceExpenses insuranceExpenses,
+                                       Retirement retirement, Savings savings, CalculateDisposableIncome calculateDisposableIncome)
+    {
+        double totalExpenses = (housingExpenses.getExpenses() + utilitiesExpenses.getExpenses() +
+                foodExpenses.getExpenses() + travelExpenses.getExpenses() +
+                entertainmentExpenses.getExpenses() + insuranceExpenses.getExpenses());
+        double totalSavings = retirement.getExpenses() + savings.getExpenses();
+        double total = totalExpenses + totalSavings;
+        double finalHoldings = (calculateDisposableIncome.getDisposableIncome() - total);
+        return finalHoldings;
+    }
+
     public static void main(String[] args) {
         boolean isFirstTime = true;
         boolean isMonthly = false;
@@ -46,15 +60,9 @@ public class Main {
                 insuranceExpenses = new InsuranceExpenses(isMonthly);
                 retirement = new Retirement(isMonthly);
                 taxBracket = new TaxBracket(filingStatus.getStatus(), earnedIncome.getIncome());
+                taxBracket.calculateTaxBracket();
                 calculateDisposableIncome = new CalculateDisposableIncome(earnedIncome.getIncome(),
                         taxBracket.calculateTaxAmount());
-
-                double totalExpenses = (housingExpenses.getExpenses() + utilitiesExpenses.getExpenses() +
-                        foodExpenses.getExpenses() + travelExpenses.getExpenses() +
-                        entertainmentExpenses.getExpenses() + insuranceExpenses.getExpenses());
-                double totalSavings = retirement.getExpenses() + savings.getExpenses();
-                double total = totalExpenses + totalSavings;
-               finalHoldings = (calculateDisposableIncome.getDisposableIncome() - total);
 
                 boolean valid = false;
                 boolean saved = false;
@@ -75,29 +83,30 @@ public class Main {
 
                 savings = new Savings(isMonthly, saved);
 
+                finalHoldings = finalHoldings(housingExpenses, utilitiesExpenses, foodExpenses, travelExpenses,
+                        entertainmentExpenses, insuranceExpenses, retirement, savings, calculateDisposableIncome);
+
                 isFirstTime = false;
             }
 
             else {
+                System.out.println();
                 InformationPrinter.printMenu();
                 userChoice = ByteValidation.validate();
 
                 if (userChoice == 0) {
+                    System.out.println();
                     run = false;
 
-                    double totalExpenses = (housingExpenses.getExpenses() + utilitiesExpenses.getExpenses() +
-                            foodExpenses.getExpenses() + travelExpenses.getExpenses() +
-                            entertainmentExpenses.getExpenses() + insuranceExpenses.getExpenses());
-                    double totalSavings = retirement.getExpenses() + savings.getExpenses();
-                    double total = totalExpenses + totalSavings;
-                    finalHoldings = (calculateDisposableIncome.getDisposableIncome() - total);
+                    finalHoldings = finalHoldings(housingExpenses, utilitiesExpenses, foodExpenses, travelExpenses,
+                            entertainmentExpenses, insuranceExpenses, retirement, savings, calculateDisposableIncome);
 
                     System.out.printf("Your final holdings are: $%.2f\n", finalHoldings);
                      if (finalHoldings >= 0) {
-                     System.out.println("You are financially good");
+                     System.out.println("You are financially well");
                      }
                      else {
-                     System.out.println("You are not financially good");
+                     System.out.println("You are not financially well");
                      System.out.println("Consider getting another job");
                      }
                     System.out.println("Good bye");
@@ -105,46 +114,64 @@ public class Main {
                 }
 
                 else if (userChoice == 1) {
+                    System.out.println();
                     InformationPrinter.listExpenses(housingExpenses, utilitiesExpenses, foodExpenses,
                             travelExpenses, entertainmentExpenses, insuranceExpenses, retirement, savings);
                 }
 
                 else if (userChoice == 2) {
+                    System.out.println();
                     InformationPrinter.modifyExpenses(housingExpenses, utilitiesExpenses, foodExpenses,
                             travelExpenses, entertainmentExpenses, insuranceExpenses, retirement, savings);
                 }
 
                 else if (userChoice == 3) {
+                    System.out.println();
                     earnedIncome.setIncome();
+                    taxBracket.setIncome(earnedIncome.getIncome());
+                    taxBracket.calculateTaxBracket();
+                    calculateDisposableIncome.setIncome(earnedIncome.getIncome());
+                    calculateDisposableIncome.setTaxAmount(taxBracket.calculateTaxAmount());
+                    calculateDisposableIncome.getDisposableIncome();
                 }
 
                 else if (userChoice == 4) {
+                    System.out.println();
                     filingStatus.setStatus();
+                    taxBracket.setStatus(filingStatus.getStatus());
+                    taxBracket.calculateTaxBracket();
                 }
 
                 else if (userChoice == 5) {
-                    System.out.println(taxBracket.calculateTaxAmount());
+                    System.out.println();
+                    System.out.printf("You have a %.2f%% tax rate\n", taxBracket.calculateTaxBracket());
+                    System.out.printf("You owe $%.2f in taxes\n", taxBracket.calculateTaxAmount());
                 }
 
                 else if (userChoice == 6) {
-                    calculateDisposableIncome.getDisposableIncome();
+                    System.out.println();
+                    System.out.printf("You earned $%.2f in disposable income\n", calculateDisposableIncome.getDisposableIncome());
                 }
                 else if (userChoice == 7) {
-                    double totalExpenses = (housingExpenses.getExpenses() + utilitiesExpenses.getExpenses() +
-                            foodExpenses.getExpenses() + travelExpenses.getExpenses() +
-                            entertainmentExpenses.getExpenses() + insuranceExpenses.getExpenses());
-                    double totalSavings = retirement.getExpenses() + savings.getExpenses();
-                    double total = totalExpenses + totalSavings;
-                    finalHoldings = (calculateDisposableIncome.getDisposableIncome() - total);
+                    System.out.println();
+                    finalHoldings = finalHoldings(housingExpenses, utilitiesExpenses, foodExpenses, travelExpenses,
+                            entertainmentExpenses, insuranceExpenses, retirement, savings, calculateDisposableIncome);
+                    System.out.printf("You have $%.2f left after spending\n", finalHoldings);
                 }
 
                 else if (userChoice == 8) {
+                    System.out.println();
                     housingExpenses = null;
                     utilitiesExpenses = null;
                     foodExpenses = null;
                     travelExpenses = null;
                     entertainmentExpenses = null;
                     insuranceExpenses = null;
+                    retirement = null;
+                    taxBracket = null;
+                    filingStatus = null;
+                    calculateDisposableIncome = null;
+                    savings = null;
                     isFirstTime = true;
                 }
 

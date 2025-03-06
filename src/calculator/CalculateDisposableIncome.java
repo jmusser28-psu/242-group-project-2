@@ -8,6 +8,12 @@ public class CalculateDisposableIncome {
         this.income = income;
         this.taxAmount = taxAmount;
     }
+    public void setIncome(double income) {
+        this.income = income;
+    }
+    public void setTaxAmount(double taxAmount) {
+        this.taxAmount = taxAmount;
+    }
     public double getDisposableIncome() {
         return (income - taxAmount);
     }

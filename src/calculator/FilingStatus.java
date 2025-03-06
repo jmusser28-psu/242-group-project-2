@@ -6,26 +6,37 @@ public class FilingStatus {
 
     String status;
     public FilingStatus() {
-        System.out.print("What is your filing status (Single, Married)");
-        this.status = GetString.get();
-    }
-    public void setStatus() {
-        System.out.print("What is your filing status (Single, Married)");
-        String userInput = GetString.get();
-        String status = "";
         boolean valid = false;
+        System.out.print("What is your filing status? (Single, Married): ");
         while (!valid) {
-            if (userInput.equalsIgnoreCase("Single")) {
-                status = userInput;
+            this.status = GetString.get();
+            if (status.equalsIgnoreCase("Single")) {
                 valid = true;
             }
-            else if (userInput.equalsIgnoreCase("Married")) {
-                status = userInput;
+            else if (status.equalsIgnoreCase("Married")) {
                 valid = true;
             }
             else {
+                System.out.print("Please enter a valid status: ");
                 valid = false;
-                userInput = GetString.get();
+            }
+        }
+
+    }
+    public void setStatus() {
+        boolean valid = false;
+        System.out.print("What is your filing status? (Single, Married): ");
+        while (!valid) {
+            this.status = GetString.get();
+            if (status.equalsIgnoreCase("Single")) {
+                valid = true;
+            }
+            else if (status.equalsIgnoreCase("Married")) {
+                valid = true;
+            }
+            else {
+                System.out.print("Please enter a valid status: ");
+                valid = false;
             }
         }
     }

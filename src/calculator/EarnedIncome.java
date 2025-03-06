@@ -14,7 +14,7 @@ public class EarnedIncome {
     }
 
     public void setIncome() {
-        System.out.println("Enter a new income: ");
+        System.out.print("Enter a new income: ");
         double userIncome = DoubleValidation.validate();
         this.income = userIncome;
     }
