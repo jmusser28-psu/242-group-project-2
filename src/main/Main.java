@@ -63,6 +63,13 @@ public class Main {
                 if (userChoice == 0) {
                     run = false;
                     System.out.printf("Your final holdings are: $%.2f\n");
+                    // if (finalHoldings >= 0) {
+                    // System.out.println("You are financially good")
+                    // }
+                    // else {
+                    // System.out.println("You are not financially good")
+                    // System.out.println("Consider getting another job")
+                    // }
                     System.out.println("Good bye");
 
                 }
