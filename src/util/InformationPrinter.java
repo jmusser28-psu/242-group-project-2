@@ -32,7 +32,8 @@ public class InformationPrinter {
         System.out.println("\t3.) Set Income");
         System.out.println("\t4.) Set Filing Status");
         System.out.println("\t5.) Calculate Tax Amount Owed");
-        System.out.println("\t7.) Calculate Disposable Income");
+        System.out.println("\t6.) Calculate Disposable Income");
+        System.out.println("\t7.) Calculate Money After Expenses");
         System.out.println("\t8.) Reset Program");
         System.out.print("What would you like to do? ");
     }
