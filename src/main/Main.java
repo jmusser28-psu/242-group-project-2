@@ -2,7 +2,8 @@ package main;
 
 import expenses.*;
 import util.ByteValidation;
-import util.*;
+import util.GetString;
+import util.InformationPrinter;
 
 public class Main {
 
@@ -17,6 +18,8 @@ public class Main {
         TravelExpenses travelExpenses = null;
         EntertainmentExpenses entertainmentExpenses = null;
         InsuranceExpenses insuranceExpenses = null;
+        Savings savings = null;
+        Retirement retirement = null;
 
         boolean run = true;
         while (run) {
@@ -29,6 +32,27 @@ public class Main {
                 travelExpenses = new TravelExpenses(isMonthly);
                 entertainmentExpenses = new EntertainmentExpenses(isMonthly);
                 insuranceExpenses = new InsuranceExpenses(isMonthly);
+                retirement = new Retirement(isMonthly);
+
+                boolean valid = false;
+                boolean saved = false;
+                System.out.print("Would you like to enter savings? ");
+                while (!valid) {
+                    String answer = GetString.get();
+                    if (answer.equalsIgnoreCase("Yes")) {
+                        valid = true;
+                        saved = true;
+                    }
+                    else if (answer.equalsIgnoreCase("No")) {
+                        valid = true;
+                    }
+                    else {
+                        System.out.print("Please enter a valid answer: ");
+                    }
+                }
+
+                savings = new Savings(isMonthly, saved);
+
                 isFirstTime = false;
             }
 
@@ -42,12 +66,12 @@ public class Main {
 
                 else if (userChoice == 1) {
                     InformationPrinter.listExpenses(housingExpenses, utilitiesExpenses, foodExpenses,
-                            travelExpenses, entertainmentExpenses, insuranceExpenses);
+                            travelExpenses, entertainmentExpenses, insuranceExpenses, retirement, savings);
                 }
 
                 else if (userChoice == 2) {
                     InformationPrinter.modifyExpenses(housingExpenses, utilitiesExpenses, foodExpenses,
-                            travelExpenses, entertainmentExpenses, insuranceExpenses);
+                            travelExpenses, entertainmentExpenses, insuranceExpenses, retirement, savings);
                 }
 
                 else if (userChoice == 3) {
