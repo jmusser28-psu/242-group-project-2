@@ -45,21 +45,21 @@ public class InformationPrinter {
                 entertainmentExpenses.getExpenses() + insuranceExpenses.getExpenses());
         double totalSavings = retirement.getExpenses() + savings.getExpenses();
         double total = totalExpenses + totalSavings;
-        System.out.println("Expenses");
-        System.out.printf("Housing Expenses: $%.2f\n", housingExpenses.getExpenses());
-        System.out.printf("Utilities Expenses: $%.2f\n", utilitiesExpenses.getExpenses());
-        System.out.printf("Food Expenses: $%.2f\n", foodExpenses.getExpenses());
-        System.out.printf("Travel Expenses: $%.2f\n", travelExpenses.getExpenses());
-        System.out.printf("Entertainment Expenses: $%.2f\n", entertainmentExpenses.getExpenses());
-        System.out.printf("Insurance Premiums: $%.2f\n", insuranceExpenses.getExpenses());
+        System.out.println("---Expenses---");
+        System.out.printf("\tHousing Expenses: $%.2f\n", housingExpenses.getExpenses());
+        System.out.printf("\tUtilities Expenses: $%.2f\n", utilitiesExpenses.getExpenses());
+        System.out.printf("\tFood Expenses: $%.2f\n", foodExpenses.getExpenses());
+        System.out.printf("\tTravel Expenses: $%.2f\n", travelExpenses.getExpenses());
+        System.out.printf("\tEntertainment Expenses: $%.2f\n", entertainmentExpenses.getExpenses());
+        System.out.printf("\tInsurance Premiums: $%.2f\n", insuranceExpenses.getExpenses());
         System.out.printf("Total Expenses: $%.2f\n", totalExpenses);
         System.out.println();
-        System.out.println("Savings");
-        System.out.printf("Retirement Contributions $%.2f\n", retirement.getExpenses());
-        System.out.printf("Savings $%.2f\n", savings.getExpenses());
-        System.out.printf("Total Savings $%.2f\n", totalSavings);
+        System.out.println("---Savings---");
+        System.out.printf("\tRetirement Contributions: $%.2f\n", retirement.getExpenses());
+        System.out.printf("\tSavings: $%.2f\n", savings.getExpenses());
+        System.out.printf("Total Savings: $%.2f\n", totalSavings);
         System.out.println();
-        System.out.printf("Total Spent$%.2f\n", total);
+        System.out.printf("Total Spent: $%.2f\n", total);
 
 
     }
@@ -69,7 +69,7 @@ public class InformationPrinter {
                                       Retirement retirement, Savings savings)
     {
         byte userChoice = 0;
-        System.out.println("Expenses");
+        System.out.println("Modifiable Expenses");
         System.out.println("\t1.) Housing Expenses");
         System.out.println("\t2.) Utilities Expenses");
         System.out.println("\t3.) Food Expenses");
@@ -77,7 +77,7 @@ public class InformationPrinter {
         System.out.println("\t5.) Entertainment Expenses");
         System.out.println("\t6.) Insurance Premiums");
         System.out.println();
-        System.out.println("Savings");
+        System.out.println("Modifiable Savings");
         System.out.println("\t7.) 401k Contributions");
         System.out.println("\t8.) Savings Contributions");
         System.out.print("What would you like to do? ");
