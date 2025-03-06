@@ -62,6 +62,9 @@ public class Main {
 
                 if (userChoice == 0) {
                     run = false;
+                    System.out.printf("Your final holdings are: $%.2f\n");
+                    System.out.println("Good bye");
+
                 }
 
                 else if (userChoice == 1) {
@@ -87,6 +90,10 @@ public class Main {
                 }
 
                 else if (userChoice == 6) {
+
+                }
+
+                else if (userChoice == 7) {
                     housingExpenses = null;
                     utilitiesExpenses = null;
                     foodExpenses = null;
