@@ -6,6 +6,7 @@ public class DoubleValidation {
     private static Scanner scnr = new Scanner(System.in);
 
     public static double validate() {
+        // Verifies that an input is actually a double value
         double returnValue = 0;
         boolean valid = false;
         while (!valid) {

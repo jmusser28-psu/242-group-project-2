@@ -7,18 +7,22 @@ public class TaxBracket {
     private int percent;
 
     public TaxBracket(String status, double income) {
+        // Constructs the method and sets status and income
         this.status = status;
         this.income = income;
     }
 
     public void setStatus(String status) {
+        // Sets status
         this.status = status;
     }
     public void setIncome(double income) {
+        // Sets income
         this.income = income;
     }
 
     public double calculateTaxBracket() {
+        // Determines tax rate based on status
         if(status.equalsIgnoreCase("Married")) {
             if (income > 0 && income < 14600) {
                 percent = 0;
@@ -59,6 +63,7 @@ public class TaxBracket {
         return percent;
     }
     public double calculateTaxAmount() {
+        // Calculates the tax amount owed
         return income * (percent / 100.0);
     }
 

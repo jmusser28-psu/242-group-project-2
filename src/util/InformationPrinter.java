@@ -4,6 +4,7 @@ import expenses.*;
 
 public class InformationPrinter {
     public static boolean firstRun() {
+        // Prints the initial set up and determines if the user wants to enter monthly values
         System.out.println("---Initial Setup---");
         System.out.print("Would you like to enter yearly or monthly data? ");
         String choice = GetString.get();
@@ -25,6 +26,7 @@ public class InformationPrinter {
     }
 
     public static void printMenu() {
+        // Prints the menu options the user can interact with
         System.out.println("---Banking Program---");
         System.out.println("\t0.) Quit");
         System.out.println("\t1.) List Spending");
@@ -42,6 +44,7 @@ public class InformationPrinter {
                                     EntertainmentExpenses entertainmentExpenses, InsuranceExpenses insuranceExpenses,
                                     Retirement retirement, Savings savings)
     {
+        // Prints expenses, savings, and the total money consumed or set aside
         double totalExpenses = (housingExpenses.getExpenses() + utilitiesExpenses.getExpenses() +
                 foodExpenses.getExpenses() + travelExpenses.getExpenses() +
                 entertainmentExpenses.getExpenses() + insuranceExpenses.getExpenses());
@@ -67,6 +70,7 @@ public class InformationPrinter {
                                       EntertainmentExpenses entertainmentExpenses, InsuranceExpenses insuranceExpenses,
                                       Retirement retirement, Savings savings)
     {
+        // Prints expenses and savings and allows the user to modify specified values
         byte userChoice = 0;
         System.out.println("Modifiable Expenses");
         System.out.println("\t1.) Housing Expenses");

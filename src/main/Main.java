@@ -16,6 +16,8 @@ public class Main {
                                        EntertainmentExpenses entertainmentExpenses, InsuranceExpenses insuranceExpenses,
                                        Retirement retirement, Savings savings, CalculateDisposableIncome calculateDisposableIncome)
     {
+        // Method for calculating the final holdings
+        // Here as it does not make too much sense to put it in any of the other classes, and is called a few times
         double totalExpenses = (housingExpenses.getExpenses() + utilitiesExpenses.getExpenses() +
                 foodExpenses.getExpenses() + travelExpenses.getExpenses() +
                 entertainmentExpenses.getExpenses() + insuranceExpenses.getExpenses());
@@ -26,11 +28,14 @@ public class Main {
     }
 
     public static void main(String[] args) {
+        // Declares variables needed for program execution
+        // User choice scope should be outside of loops so that it can be stored and used by different loop iterations
         boolean isFirstTime = true;
         boolean isMonthly = false;
         byte userChoice = 0;
         double finalHoldings = 0;
 
+        // Sets all objects initially to null
         HousingExpenses housingExpenses = null;
         UtilitiesExpenses utilitiesExpenses = null;
         FoodExpenses foodExpenses = null;
@@ -44,9 +49,13 @@ public class Main {
         FilingStatus filingStatus = null;
         CalculateDisposableIncome calculateDisposableIncome = null;
 
+        // Loop to keep the program running until the user quits
         boolean run = true;
         while (run) {
             if (isFirstTime) {
+                // Determines whether expenses and savings will be entered as monthly or yearly values
+                // Gathers expenses based on the user's choice and user input
+                // Makes calculations to display to the user later
                 isMonthly = InformationPrinter.firstRun();
 
                 earnedIncome = new EarnedIncome();
@@ -90,10 +99,13 @@ public class Main {
             }
 
             else {
+                // Runs the regular print menu which gives the user choices on what they would like to do
+                // Collects the user choice and calls the class associated with the choice
                 System.out.println();
                 InformationPrinter.printMenu();
                 userChoice = ByteValidation.validate();
 
+                // Quits the program and prints recommendation
                 if (userChoice == 0) {
                     System.out.println();
                     run = false;
@@ -113,18 +125,21 @@ public class Main {
 
                 }
 
+                // Prints expense and saving information
                 else if (userChoice == 1) {
                     System.out.println();
                     InformationPrinter.listExpenses(housingExpenses, utilitiesExpenses, foodExpenses,
                             travelExpenses, entertainmentExpenses, insuranceExpenses, retirement, savings);
                 }
 
+                // Updates expenses and savings
                 else if (userChoice == 2) {
                     System.out.println();
                     InformationPrinter.modifyExpenses(housingExpenses, utilitiesExpenses, foodExpenses,
                             travelExpenses, entertainmentExpenses, insuranceExpenses, retirement, savings);
                 }
 
+                // Sets income and updates classes that are affected by the change in income
                 else if (userChoice == 3) {
                     System.out.println();
                     earnedIncome.setIncome();
@@ -135,6 +150,7 @@ public class Main {
                     calculateDisposableIncome.getDisposableIncome();
                 }
 
+                // Sets filing status and updates classes that are affected by the change in status
                 else if (userChoice == 4) {
                     System.out.println();
                     filingStatus.setStatus();
@@ -142,16 +158,20 @@ public class Main {
                     taxBracket.calculateTaxBracket();
                 }
 
+                // Calculates and prints tax bracket and tax amount owed
                 else if (userChoice == 5) {
                     System.out.println();
                     System.out.printf("You have a %.2f%% tax rate\n", taxBracket.calculateTaxBracket());
                     System.out.printf("You owe $%.2f in taxes\n", taxBracket.calculateTaxAmount());
                 }
 
+                // Calculates and prints disposable income
                 else if (userChoice == 6) {
                     System.out.println();
                     System.out.printf("You earned $%.2f in disposable income\n", calculateDisposableIncome.getDisposableIncome());
                 }
+
+                // Calculate final withholding
                 else if (userChoice == 7) {
                     System.out.println();
                     finalHoldings = finalHoldings(housingExpenses, utilitiesExpenses, foodExpenses, travelExpenses,
@@ -159,6 +179,7 @@ public class Main {
                     System.out.printf("You have $%.2f left after spending\n", finalHoldings);
                 }
 
+                // Sets all objects to null, updates isFirstTime to true and effectively resets the program
                 else if (userChoice == 8) {
                     System.out.println();
                     housingExpenses = null;
@@ -175,6 +196,7 @@ public class Main {
                     isFirstTime = true;
                 }
 
+                // Informs the user they made an invalid choice
                 else {
                     System.out.printf("Invalid option, %d\n", userChoice);
                     System.out.println();
